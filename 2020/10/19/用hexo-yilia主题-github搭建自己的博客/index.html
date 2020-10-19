@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>用hexo(yilia主题)+github搭建自己的博客 - Yao&#039;s Blog</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="Yao&#039;s Blog"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Yao&#039;s Blog"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta description="本文将一步一步的教会你，如何用hexo在github上搭建自己的blog，包教包会，不会再教，一定要把你教会。"><meta property="og:type" content="blog"><meta property="og:title" content="用hexo(yilia主题)+github搭建自己的博客"><meta property="og:url" content="http://example.com/2020/10/19/%E7%94%A8hexo-yilia%E4%B8%BB%E9%A2%98-github%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/"><meta property="og:site_name" content="Yao&#039;s Blog"><meta property="og:description" content="本文将一步一步的教会你，如何用hexo在github上搭建自己的blog，包教包会，不会再教，一定要把你教会。"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="http://example.com/images/2.jpg"><meta property="og:image" content="http://example.com/images/github.png"><meta property="og:image" content="http://example.com/images/ssh-github.png"><meta property="article:published_time" content="2020-10-19T14:10:58.000Z"><meta property="article:modified_time" content="2020-10-19T15:00:29.714Z"><meta property="article:author" content="没有哆啦A梦的大雄"><meta property="article:tag" content="hexo"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/images/2.jpg"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2020/10/19/%E7%94%A8hexo-yilia%E4%B8%BB%E9%A2%98-github%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/"},"headline":"Yao's Blog","image":["http://example.com/images/2.jpg","http://example.com/images/github.png","http://example.com/images/ssh-github.png"],"datePublished":"2020-10-19T14:10:58.000Z","dateModified":"2020-10-19T15:00:29.714Z","author":{"@type":"Person","name":"没有哆啦A梦的大雄"},"description":"本文将一步一步的教会你，如何用hexo在github上搭建自己的blog，包教包会，不会再教，一定要把你教会。"}</script><link rel="canonical" href="http://example.com/2020/10/19/%E7%94%A8hexo-yilia%E4%B8%BB%E9%A2%98-github%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/"><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 5.2.0"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/">Yao&#039;s Blog</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">主页</a><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/about">关于</a></div><div class="navbar-end"><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-6-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2020-10-19T14:10:58.000Z" title="2020-10-19T14:10:58.000Z">2020-10-19</time>发表</span><span class="level-item"><time dateTime="2020-10-19T15:00:29.714Z" title="2020-10-19T15:00:29.714Z">2020-10-19</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/hexo/">hexo</a><span> / </span><a class="link-muted" href="/categories/hexo/%E6%96%B0%E6%89%8B%E4%BD%BF%E7%94%A8/">新手使用</a></span><span class="level-item">7 分钟读完 (大约1100个字)</span></div></div><h1 class="title is-3 is-size-4-mobile">用hexo(yilia主题)+github搭建自己的博客</h1><div class="content"><p><img src="/images/2.jpg" alt="图片来自网络，侵删"></p>
+<p>本文将一步一步的教会你，如何用hexo在github上搭建自己的blog，包教包会，不会再教，一定要把你教会。</p>
+<a id="more"></a>  
+
+
+<h3 id="github-配置"><a href="#github-配置" class="headerlink" title="github 配置"></a>github 配置</h3><p>github的官网网址：<a target="_blank" rel="noopener" href="https://github.com/%EF%BC%8C">https://github.com/，</a> 找到右上角的sign up按钮，不要点击sign in，这个是登录，然后按要求填写你自己的信息，最后点击 create account按钮，这就创建好了账号。</p>
+<p><img src="/images/github.png" alt="github创建新仓库"></p>
+<p>点击右上方➕按钮，选择New repository，Repository name，必须写上____.github.io，空格上添上你刚才写的username</p>
+<pre><code>例如你的username是 xiaoming， 那么你的Repository name就是--&gt; xiaoming.github.io</code></pre>
+<p>项目建成后，点击settings，向下拉到Github Pages，点击Choose a theme，然后过一会儿回到github page，在浏览器中输入 ____.github.io访问你刚刚创建的页面。（由于国内网络原因，可能访问很慢，也可能访问不了，均属于正常情况哈）</p>
+<p>打开终端，输入如下内容，配置git信息</p>
+<pre><code>git config --global user.name &quot;_______&quot;
+git config --global user.email &quot;_______&quot;</code></pre>
+<p>上面空格处，填入你刚才注册的用户名和邮箱，用于向远程仓库。</p>
+<p>然后生成密钥SSH key：</p>
+<pre><code>ssh-keygen -t rsa -C &quot;________&quot;</code></pre>
+<p>空格处填入你的上面填写的邮箱</p>
+<p>打开github，在头像下面点击settings，再点击SSH and GPG keys，新建一个SSH，名字随便。</p>
+<p>终端中输入</p>
+<p>cat ~/.ssh/id_rsa.pub</p>
+<p>将输出的内容复制到框中，点击确定保存。</p>
+<p>输入ssh -T <a href="mailto:&#x67;&#x69;&#x74;&#64;&#x67;&#x69;&#x74;&#x68;&#x75;&#98;&#x2e;&#x63;&#111;&#109;">&#x67;&#x69;&#x74;&#64;&#x67;&#x69;&#x74;&#x68;&#x75;&#98;&#x2e;&#x63;&#111;&#109;</a>，如果如下图所示，出现你的用户名，那就成功了。</p>
+<p><img src="/images/ssh-github.png" alt="ssh"></p>
+<h3 id="hexo配置"><a href="#hexo配置" class="headerlink" title="hexo配置"></a>hexo配置</h3><p>1.安装node.js</p>
+<p>Windows： 打开这个网址 <a target="_blank" rel="noopener" href="https://nodejs.org/en/">https://nodejs.org/en/</a> ，建议下载LTS版本哈。  </p>
+<p>mac： 建议用</p>
+<pre><code>brew install node</code></pre>
+<p>下载完成后，打开终端，输入如下：</p>
+<pre><code>node -v
+
+npm -v </code></pre>
+<p>看到版本号， 就是安装成功。</p>
+<p>由于原本的npm源下载依赖包很慢，所以推荐使用国内镜像源加速：</p>
+<pre><code>npm config set registry https://registry.npm.taobao.org</code></pre>
+<p>2.安装hexo</p>
+<p>打开终端，输入：</p>
+<pre><code>npm install hexo-cli -g</code></pre>
+<p>安装完后，输入hexo -v，来验证安装是否成功。</p>
+<p>然后创建一个blog文件夹，打开终端，cd进这个blog文件夹，输入</p>
+<pre><code>hexo init</code></pre>
+<p>init后再输入：</p>
+<pre><code>npm install</code></pre>
+<p>安装必须的依赖</p>
+<p>再然后继续终端输入</p>
+<pre><code>hexo g </code></pre>
+<p>生成静态网页</p>
+<pre><code>hexo s</code></pre>
+<p>打开本地服务器，在浏览器输入 <a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000/</a> ，访问刚刚用hexo创建的本地页面。</p>
+<p>按住ctrl+c，关闭本地服务器。</p>
+<p>3.在hexo中配置github</p>
+<p>打开blog文件夹，blog文件夹下，找到_config.yml文件，为hexo配置github，修改最后一行。</p>
+<pre><code>deploy:
+    type: git
+    repository: https://github.com/_____/_____.github.io
+    branch: master </code></pre>
+<p>空格处填写你的github用户名</p>
+<p>然后在blog文件下，终端输入：</p>
+<pre><code>npm install hexo-deployer-git --save</code></pre>
+<p>这个依赖包是将文章推送到github上用的。</p>
+<p>4.写文章、发布文章</p>
+<p>在blog文件夹下，打开终端，输入</p>
+<pre><code>hexo new post &quot;____&quot;</code></pre>
+<p>空格处，填写你的文章名字。</p>
+<p>然后你就会看到在blog/source/_posts目录下有你刚才创建的 ____.md 文件。</p>
+<p>在blog文件夹下，终端输入 hexo g 生成静态页面，再输入 hexo g 就可以通过localhost访问到你刚才创建的文章。</p>
+<p>ctrl+v 关闭本地服务器后，终端输入：</p>
+<pre><code>hexo d</code></pre>
+<p>将本地的hexo创建的blog发布到github上，过一会后，你就可以通过 浏览器输入  ____.github.io，访问到你刚才创建发布的博客和文章啦。</p>
+<p>5.配置hexo主题—-yilia</p>
+<p>blog文件夹下，终端输入：</p>
+<pre><code>git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia</code></pre>
+<p>将blog文件夹下的_config.yml中的</p>
+<pre><code>theme: yilia</code></pre>
+<p>这样就改变好主题了，再在终端下输入</p>
+<pre><code>hexo clean</code></pre>
+<p>然后</p>
+<pre><code>hexo g</code></pre>
+<p>再然后</p>
+<pre><code>hexo d</code></pre>
+<p>过一会儿之后，再用浏览器打开  ____.github.io ，就能看到刚换好的主题了。</p>
+<blockquote>
+<p>ps: 写了太长时间了，先这样吧，后面再改进。</p>
+</blockquote>
+</div><div class="article-licensing box"><div class="licensing-title"><p>用hexo(yilia主题)+github搭建自己的博客</p><p><a href="http://example.com/2020/10/19/%E7%94%A8hexo-yilia%E4%B8%BB%E9%A2%98-github%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/">http://example.com/2020/10/19/%E7%94%A8hexo-yilia%E4%B8%BB%E9%A2%98-github%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>没有哆啦A梦的大雄</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2020-10-19</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2020-10-19</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icon" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a><a class="icon" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a><a class="icon" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/hexo/">hexo</a></div><div class="addthis_inline_share_toolbox"></div><script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5f8d9cdf0ae6a443" defer></script></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3><div class="buttons is-centered"><a class="button donate" data-type="alipay"><span class="icon is-small"><i class="fab fa-alipay"></i></span><span>支付宝</span><span class="qrcode"><img src="/img/wukong.jpeg" alt="支付宝"></span></a><a class="button donate" data-type="wechat"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>微信</span><span class="qrcode"><img src="/" alt="微信"></span></a></div></div></div><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div class="content" id="valine-thread"></div><script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script><script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script><script>new Valine({
+            el: '#valine-thread' ,
+            appId: "fI0J7L7ECVAP9mTBAutUJCUC-gzGzoHsz",
+            appKey: "msbX6UW0muspYIy0RQ5EhNuD",
+            placeholder: "慎言，慎言~",
+            
+            
+            meta: ["nick","mail","link"],
+            pageSize: 10,
+            lang: "zh-CN",
+            visitor: true,
+            highlight: true,
+            
+            
+            
+            
+            
+            requiredFields: [],
+        });</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/img/wukong.jpeg" alt="没有哆啦A梦的大雄"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">没有哆啦A梦的大雄</p><p class="is-size-6 is-block">USTC &amp; SIAT 联合培养硕士生</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>The earth.</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">1</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">2</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">1</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/github-yao-tong" target="_blank" rel="noopener">关注我</a></div></div></div><!--!--><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">链接</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://hexo.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Hexo</span></span><span class="level-right"><span class="level-item tag">hexo.io</span></span></a></li></ul></div></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2020/10/"><span class="level-start"><span class="level-item">十月 2020</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></div></div></div><div class="column-right-shadow is-hidden-widescreen"></div></div><div class="column column-right is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only order-3"><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/hexo/"><span class="level-start"><span class="level-item">hexo</span></span><span class="level-end"><span class="level-item tag">1</span></span></a><ul><li><a class="level is-mobile" href="/categories/hexo/%E6%96%B0%E6%89%8B%E4%BD%BF%E7%94%A8/"><span class="level-start"><span class="level-item">新手使用</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2020-10-19T14:10:58.000Z">2020-10-19</time></p><p class="title"><a href="/2020/10/19/%E7%94%A8hexo-yilia%E4%B8%BB%E9%A2%98-github%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/">用hexo(yilia主题)+github搭建自己的博客</a></p><p class="categories"><a href="/categories/hexo/">hexo</a> / <a href="/categories/hexo/%E6%96%B0%E6%89%8B%E4%BD%BF%E7%94%A8/">新手使用</a></p></div></article></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/hexo/"><span class="tag">hexo</span><span class="tag">1</span></a></div></div></div></div></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/">Yao&#039;s Blog</a><p class="is-size-7"><span>&copy; 2020 没有哆啦A梦的大雄</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/github-yao-tong"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" async></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>
